@@ -1,0 +1,23 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  
+  <PropertyGroup>
+    <PowershellModuleDir>$(SolutionDir)Module\PowerShellLogging\</PowershellModuleDir>
+    <ProjectBin>$(SolutionDir)bin\$(Configuration)\</ProjectBin>
+  </PropertyGroup>
+  
+  
+  <Target Name="CopyModuleToBinDir">
+
+    <ItemGroup>
+      <moduleFiles Include="$(PowershellModuleDir)PowerShellLogging.ps*" />
+    </ItemGroup>
+    
+    <Message Importance="high" Text="CopyModuleToBinDir. Copy modules. SOURCE: $(PowershellModuleDir)PowerShellLogging.ps* DESTINATION: $(ProjectBin) " />
+
+    <Copy SourceFiles="@(moduleFiles)"
+          DestinationFolder="$(ProjectBin)"
+          Condition="Exists('$(PowershellModuleDir)PowerShellLogging.psm1')" />
+
+  </Target>
+
+</Project>
