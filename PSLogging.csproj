@@ -39,6 +39,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationInsightsOutputSubscriber.cs" />
+    <Compile Include="Commands\DisableApplicationInsightsCommand.cs" />
+    <Compile Include="Commands\EnableApplicationInsightsCommand.cs" />
     <Compile Include="Commands\EnableOutputSubscriberCommand.cs" />
     <Compile Include="Commands\DisableLogFileCommand.cs" />
     <Compile Include="Commands\DisableOutputSubscriberCommand.cs" />
